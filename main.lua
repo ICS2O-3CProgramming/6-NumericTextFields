@@ -24,7 +24,7 @@ local randomNumber2
 local userAnswer
 local correctAnswer
 
---*** ADD LOCAL VARIABLE FOR: INCORRECT OBJECT
+--*** ADD LOCAL VARIABLE FOR: INCORRECT OBJECT, POINTS OBJECT, POINTS
 
 
 -----------------------------------------------------------------------------------------
@@ -32,9 +32,10 @@ local correctAnswer
 -----------------------------------------------------------------------------------------
 
 local function AskQuestion()
-	-- generate 2 random numbers between a max. and a min. number
-	randomNumber1 = math.random(0, 10)
-	randomNumber2 = math.random(0, 10) 
+	--*** ADD A COMMENT FOR THE TWO LINES BELOW
+    --***CHANGE THE CODE TO USE NUMBERS BETWEEN 0 AND 10
+	randomNumber1 = math.random(0, 4)
+	randomNumber2 = math.random(0, 4) 
 
     --*** ADD CODE SO THAT THE OPERATION VARIES RANDOMLY BETWEEN ADDITION, SUBTRACTION 
     --*** AND MULTIPLICATION
@@ -71,6 +72,9 @@ local function NumericFieldListener( event )
         -- if the users answer and the correct answer are the same:
         if (userAnswer == correctAnswer) then
         	correctObject.isVisible = true
+
+            --*** ADD CODE THAT KEEPS TRACK OF THE NUMBER OF POINTS CORRECT AND DISPLAYS THIS IN 
+            --*** A TEXT OBJECT
 
             -- call the HideCorrect function after 2 seconds
         	timer.performWithDelay(2000, HideCorrect)       	               
